@@ -11,7 +11,7 @@
     <h1>Generate a <br> <span>random Password</span></h1>
     <div class="display">
       <input type="text" id="password" placeholder="Password">
-      <img src="images/copy.png" alt="" srcset="">
+      <img src="images/copy.png" onclick="copypassword()" alt="" srcset="">
     </div>
     <button onclick="createpassword()"><img src="images/generate.png" alt="">Random-password</button>
   </div>
@@ -39,6 +39,14 @@ function createpassword(){
 }
 passwordbox.value=password;
 
+}
+function copypassword(){
+  passwordbox.select();//This selects the text inside an input field (like a password or text box).
+  document.execCommand("copy")
+//document.execCommand("copy");
+// This tells the browser to copy the currently selected text to the clipboard.
+
+// It only works after some text has been selected, like you just did with .select().
 }
 
 
